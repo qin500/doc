@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>反转器</title>
+</head>
+<body>
+<a href="next1.html">
+    <img src="images/button1_off.gif" alt="button1" id="button1">
+</a>
+<a href="next2.html">
+    <img src="images/button2_off.gif" alt="button1" id="button2">
+</a>
+
+<script>
+    window.onload=rolloverInit;
+    function rolloverInit() {
+        for (let i = 0; i < document.images.length; i++) {
+            if(document.images[i].parentNode.tagName == "A"){
+                setupRollover(document.images[i])
+            }
+        }
+    }
+
+    function setupRollover(theImage) {
+        theImage.outImage=new Image();
+        theImage.outImage.src=theImage.src;
+        theImage.onmouseout=function () {
+            this.src=this.outImage.src
+        }
+        theImage.overImage=new Image();
+        theImage.overImage.src="images/" + theImage.id + "_on.gif";
+        theImage.onmouseover=function () {
+            this.src=this.overImage.src
+        }
+
+        theImage.clickImage=new Image();
+        theImage.clickImage.src="images/" + theImage.id+"_click.gif"
+        theImage.onclick=function () {
+            this.src=this.clickImage.src
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>

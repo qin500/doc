@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>这是子页面</title>
+</head>
+<body>
+    请加载一个页面
+
+
+    <script>
+        window.onload=initLinks;
+        var bannerArray=new Array("images/reading1.gif","images/reading1.gif","images/reading1.gif");
+
+        function initLinks() {
+            for (var i = 0; i < parent.document.links.length; i++) {
+                parent.document.links[i].onclick=changImg;
+            }
+
+        }
+
+
+        function changImg() {
+            var num=new Array('images/reading2.gif','images/reading1.gif','images/reading3.gif')
+            let rndNum=Math.floor(Math.random() * num.length);
+            console.log(num[rndNum])
+            parent.document.images[0].src=num[rndNum];
+            // return;
+        }
+    </script>
+</body>
+</html>

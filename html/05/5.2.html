@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+  <iframe id="icontent" name="icontent" width="800" height="500" src="" ></iframe>
+
+  <a  target="icontent" href="https://www.sohu.com/">新浪</a>
+  <a  target="icontent" href="http://www.qq.com/">腾讯</a>
+  <a  target="icontent" href="http://www.163.com/">网易</a>
+<button>写入内容</button>
+<script>
+    var links=document.links;
+    for (let i = 0; i < links.length; i++) {
+        // links[i].setAttribute('target','icontent');
+
+    }
+    let button=document.querySelector('button');
+    button.onclick=function (e) {
+        document.querySelector('iframe').contentWindow.document.body.innerHTML="<h1>你好,世界</h1>"
+    }
+
+</script>
+</body>
+</html>

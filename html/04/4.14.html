@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环显示图像</title>
+</head>
+<body>
+<div class="centered">
+  <a target="_blank"><img src="images/reading1.gif" alt="Ad Banner" id="adBanner"></a>
+
+</div>
+
+<script>
+  window.onload=rotate;
+  var theAd=0;
+  var adImages=new Array("images/reading1.gif","images/reading2.gif","images/reading3.gif")
+  var links=new Array("negrino.com","sun.com","microsoft.com");
+  document.getElementById('adBanner').parentNode.onclick=function () {
+    // location.href=this.href;
+    // return false;
+  }
+
+  function rotate() {
+    theAd++;
+    if(theAd == adImages.length){
+      theAd=0;
+    }
+    document.getElementById('adBanner').src=adImages[theAd];
+    document.getElementById('adBanner').parentNode.setAttribute("href","https://" + links[theAd]);
+    setTimeout(rotate,1000)
+  }
+</script>
+</body>
+</html>
