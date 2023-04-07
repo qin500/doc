@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用多级条件</title>
+</head>
+<body>
+<h2>Famous Presidential Quotes</h2>
+<form action="#">
+    <input type="button" id="Lincoln" value="Lincoln">
+    <input type="button" id="Kennedy" value="Kennedy">
+    <input type="button" id="Nixon" value="Nixon">
+</form>
+
+
+<script>
+    window.onload = initAll;
+
+    function initAll() {
+        document.getElementById('Lincoln').onclick =
+        document.getElementById('Kennedy').onclick =
+        document.getElementById('Nixon').onclick = saySomething;
+    }
+    function saySomething() {
+        switch (this.id) {
+            case "Lincoln":
+                alert("Four score and seven years ago...");
+                break;
+            case "Kennedy":
+                alert("Ask not what your country can do for you...");
+                break;
+            case "Nixon":
+                alert("I am not a crook!");
+                break;
+            default:
+        }
+    }
+
+</script>
+</body>
+</html>
