@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量声明</title>
+</head>
+<body>
+
+
+<script>
+    function add(num1, num2) {
+        var sum = num1 + num2;
+        return sum;
+    }
+
+    let result = add(10, 20)
+
+
+    function person() {
+        var name;
+    }
+
+
+    for (var i = 0; i < 10; ++i) {
+    }
+    console.log(i); // 10
+    for (let j = 0; j < 10; ++j) {
+    }
+
+    //常量必须赋值,一旦赋值,就不可以再修改它
+    const a = undefined;
+    console.log(a)
+
+    //如果常量是个对象,可以修改对象内部的值
+    const vegetable = {}
+    vegetable.color = "cyan"
+    vegetable.name = "青菜"
+    console.log(vegetable)
+
+    //禁止给对象赋值
+    let animal = Object.freeze({})
+    animal.name = "dog"
+    console.log(animal)//{}
+
+    var color = "red"
+
+    function getColor() {
+        let color = "cyan"
+        {
+            let color = "green"
+            return window.color
+        }
+    }
+
+    console.log(getColor())
+
+    let a1 = new getColor();
+
+
+</script>
+
+
+</body>
+</html>

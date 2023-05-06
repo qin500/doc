@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+
+
+<script>
+
+    let stringObject = new String("hello world")
+    console.log(stringObject.toString())
+    console.log(stringObject.toLocaleString())
+    console.log(stringObject.valueOf())
+    console.log(stringObject.length)
+    console.log(stringObject.charAt(2))//l
+    console.log(stringObject.charCodeAt(6))//119  返回的是某个字符的编码
+
+    console.log(String.fromCharCode(119)) // w
+
+    let message = "ab😊de";
+    console.log(message.length)
+    console.log(message.charAt(1))//b
+    console.log(message.charAt(2))//b
+    console.log(message.charAt(3))//b
+    console.log(message.charAt(4))//
+    console.log(String.fromCodePoint(0x1F60A));
+    console.log(message.codePointAt(2)) //如果要解析unicode字符推荐用这个
+    console.log(String.fromCodePoint(message.codePointAt(2))) //😊
+    console.log("---------------------")
+
+    let stringValue = 'hello ';
+    let result = stringValue.concat(stringValue, "!")
+    console.log(result)
+
+
+    let str = "hello world";
+    console.log(str.slice(2, 7))
+    console.log(str.substring(2, 5))
+    console.log(str.indexOf("l", 4))//9
+    console.log(str.lastIndexOf("lo", 2))
+
+    var str1 = "foobarbaz";
+    console.log(str1.startsWith("fo"));//true;
+    console.log(str1.endsWith("bz"))//false
+    console.log(str1.includes("bar"))//true;
+
+    let str2 = ' hello world ';
+    console.log(str2)
+    console.log(str2.trim())
+
+    let str3 = 'na '
+    console.log(str3.repeat(16).concat("batman"))
+
+    let str4 = 'foo';
+    console.log(str4.padStart(9, ' '))
+    console.log(str4.padEnd(9, '.'))
+
+    //字符串大小写转换
+    let str5 = 'hello world'
+    console.log(str5.toLowerCase())
+    console.log(str5.toUpperCase())
+
+
+    var text = 'cat, bat, sat, fat';
+    let pattern = /.at/g;
+    let matches = text.match(pattern)
+    console.log(matches)
+
+    //查找一个字符串出现的位置
+    console.log(text.search(pattern))//0
+
+    //正则替换
+    var text = 'cat, bat, sat, fat';
+    console.log(text.replace("bat", 'az')) //cat, az, sat, fat
+    console.log(text)
+
+    var colour = 'red,pink,brown,cyan,green,white,black,blue';
+    console.log(colour.split(','))
+
+    var text1 = 'yellow';
+    console.log(text1.localeCompare("brick"));
+    console.log(text1.localeCompare('yellow'))
+    console.log(text1.localeCompare('zero'))
+
+    console.log(text1.bold())
+
+
+</script>
+</body>
+</html>

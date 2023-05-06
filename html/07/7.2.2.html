@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器协议</title>
+</head>
+<body>
+
+<script>
+
+    //可迭代对象
+    let arr = ['foo', 'bar', 'baz'];
+
+    //迭代器工厂函数
+    console.log(arr[Symbol.iterator]);
+
+    //迭代器
+    let iter = arr[Symbol.iterator]();
+    //从中间插入值,被修改,那么迭代器也会反映相应的变化：
+    arr.splice(1, 0, 'barrr')
+    let result = iter.next();
+
+    while (!result.done) {
+        console.log(result.value)
+        result = iter.next()
+    }
+
+    class Foo {
+        [Symbol.iterator]() {
+            return {
+                next() {
+                    return {done: true, value: 1}
+                }
+            }
+        }
+    }
+
+    let f = new Foo()
+    console.log(f[Symbol.iterator]().next())
+
+    //Array类型实现了可迭代
+
+    let vegetable = ['potato', 'tomato', 'watermelon'];
+    console.log(vegetable[Symbol.iterator]().next())
+
+
+</script>
+</body>
+</html>

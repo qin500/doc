@@ -1,0 +1,17 @@
+
+Options -MultiViews
+RewriteEngine On
+    #直接访问域名而没有参数的情况下直接重写到入口文件
+    RewriteCond %{REQUEST_URI} ^.?$
+    RewriteRule ^(.*)$ /public/index.php [L]
+
+    #如果public目录下存在请求目录或文件，重写请求到实际目录
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d [OR]
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ /public/$1 [L]
+
+    #请求不存在的目录或文件的情况下重写到入口文件
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ /public/index.php [L]
+

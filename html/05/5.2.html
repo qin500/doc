@@ -2,28 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>RegExp</title>
 </head>
 <body>
-
-
-  <iframe id="icontent" name="icontent" width="800" height="500" src="" ></iframe>
-
-  <a  target="icontent" href="https://www.sohu.com/">新浪</a>
-  <a  target="icontent" href="http://www.qq.com/">腾讯</a>
-  <a  target="icontent" href="http://www.163.com/">网易</a>
-<button>写入内容</button>
 <script>
-    var links=document.links;
-    for (let i = 0; i < links.length; i++) {
-        // links[i].setAttribute('target','icontent');
 
-    }
-    let button=document.querySelector('button');
-    button.onclick=function (e) {
-        document.querySelector('iframe').contentWindow.document.body.innerHTML="<h1>你好,世界</h1>"
-    }
+    // let pattern1 = /at/g
+    // let pattern2 = /[bc]at/i;
+    // let pattern3 = /.at/gi;
 
+
+    let pattern2 = new RegExp(/[bc]at/, 'i')
+    console.log(pattern2.ignoreCase) //获取是否忽略大小写
+
+    // let text = "mom and dad and baby"
+    // let pattern = /mom( and dad( and baby)?)?/gi
+    // let matches = pattern.exec(text)
+    // console.log(matches)
+
+    // let text = "cat, bat, sat, fat";
+    // let pattern = /.at/g;
+    // let matches = pattern.exec(text);
+    // console.log(matches)
+    // console.log(matches.index); // 0
+    // console.log(matches[0]); // cat
+    // console.log(pattern.lastIndex); // 3
+    // matches = pattern.exec(text);
+    // console.log(matches)
+    // console.log(matches.index); // 5
+    // console.log(matches[0]); // bat
+    // console.log(pattern.lastIndex); // 8
+    // matches = pattern.exec(text);
+    // console.log(matches.index); // 10
+    // console.log(matches[0]); // sat
+    // console.log(pattern.lastIndex); // 13
+
+    let text = "abcd abc bcef acebca"
+    let pattern = /(bc)/g
+    let match = pattern.exec(text)
+  
 </script>
 </body>
 </html>

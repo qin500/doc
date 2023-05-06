@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    let a = 6;
+    let b = 9;
+
+    function zipTag(strings, ...expressions) {
+        return strings[0] +
+            expressions.map((e, i) => `${e}${strings[i + 1]}`).join(' ');
+    }
+
+    let untaggedResult = `${a}+${b}=${a + b}`;
+    let taggedResult = zipTag`${a}+${b}=${a + b}`;
+    console.log(untaggedResult)
+    console.log(taggedResult)
+
+    //原始字符串
+    //Unicode示例
+    console.log(`\u00a9`)// ©
+    console.log(String.raw`\u00A9`); // \u00A9
+
+    //换行示例
+    let text = `今天星期天 \n 不用去上学`;
+    console.log(text)
+    console.log(String.raw`今天星期天 \r\n 不用去上学`)
+
+
+</script>
+</body>
+</html>

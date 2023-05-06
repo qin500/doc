@@ -1,0 +1,255 @@
+/* 弹出信息框 */
+.qin500alert >*{
+    margin:0;
+    padding:0;
+}
+.qin500alert {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(155, 154, 154, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 11000;
+}
+
+.qin500alert .container {
+    width: auto;
+    max-width: 90%;
+    min-width: 318px;
+    background-color: white;
+    align-self: center;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 0px #dfdfdf;
+}
+
+.qin500alert .container .ph {
+    width: 90px;
+    height: 90px;
+    margin: 15px auto;
+    border: 3px solid #f408eb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qin500alert .container .ph i {
+    font-size: 55px;
+    color: #f408eb;
+}
+
+.qin500alert .container dl dt {
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.qin500alert .container dl dd {
+    /* text-indent: 2em; */
+    line-height: 1.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #313131;
+}
+
+.qin500alert .container .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 12px auto;
+    padding-left: 18px;
+    text-align: center;
+}
+
+.qin500alert .container .btns a {
+    padding: .375rem 2.55rem;
+    margin-right: 18px;
+    white-space: nowrap;
+    color: white;
+    cursor: pointer;
+}
+.qin500alert .container .btns a:hover{
+    opacity: 0.8;
+}
+.qin500alert .container .btns .btn-success{
+
+}
+.qin500alert .container .btns .btn-info{
+    background-color: #545454;
+}
+.qin500alert .container.alert-loading {
+    min-width: auto;
+    background-color: #4a5250;
+}
+
+.qin500alert .container.alert-loading .ph {
+    margin: 20px;
+    border-color: #fff;
+}
+
+.qin500alert .container.alert-loading .ph i {
+    color: #fff;
+}
+
+.qin500alert .container.alert-loading .btns {
+    display: none;
+}
+
+.qin500alert .alert-info .myimg,
+.qin500alert .alert-success .myimg,
+.qin500alert .alert-danger .myimg,
+.qin500alert .alert-warning .myimg {
+    display: none;
+}
+
+.qin500alert .alert-info .ph {
+    border-color: #007bff;
+}
+
+.qin500alert .alert-info dl dt::before {
+    /*content: '信息提示';*/
+}
+
+.qin500alert .alert-info .ph i,
+.qin500alert .alert-info dl dt {
+    color: #007bff;
+}
+
+.qin500alert .alert-info .fa-custom:before {
+    content: "\f128";
+}
+.qin500alert .btn-success{
+    background-color: #0084ff;
+}
+.qin500alert .alert-success .ph {
+    border-color: #1de9b6;
+}
+
+.qin500alert .alert-success dl dt::before {
+    /*content: '成功提示';*/
+}
+
+.qin500alert .alert-success .ph i,
+.qin500alert .alert-success dl dt {
+    color: #1de9b6;
+}
+
+.qin500alert .alert-success .fa-custom:before {
+    content: "\f00c";
+}
+
+.qin500alert .alert-danger .ph {
+    border-color: #d62c1a;
+}
+
+.qin500alert .alert-danger dl dt::before {
+    /*content: '错误提示';*/
+}
+
+.qin500alert .alert-danger .ph i,
+.qin500alert .alert-danger dl dt {
+    color: #d62c1a;
+}
+
+.qin500alert .alert-danger .fa-custom:before {
+    content: "\f00d";
+}
+
+.qin500alert .alert-warning .ph {
+    border-color: #f39c12;
+}
+
+.qin500alert .alert-warning dl dt::before {
+    content: '警告信息';
+}
+
+.qin500alert .alert-warning .ph i,
+.qin500alert .alert-warning dl dt {
+    color: #f39c12;
+}
+
+.qin500alert .alert-warning .fa-custom:before {
+    content: "\f12a";
+}
+
+.qin500alert .alert-img .ph,
+.qin500alert .alert-img dl {
+    display: none;
+}
+
+.qin500alert .container.alert-img {
+    max-height: 80%;
+}
+
+.qin500alert .alert-img .myimg {
+    display: block;
+    /* max-width: 88%; */
+    margin: 10px auto 20px;
+    width: 88%;
+    height: 88%;
+    background-size: 100% 100%;
+    transition: all 0.7s ease;
+}
+.qin500alert .circleProgress_wrapper{
+    width:200px;
+    height: 200px;
+    /* border:1px solid #ddd; */
+    margin: 20px auto;
+    position: relative;
+}
+.qin500alert .circleProgress_wrapper .wrapper{
+    position: absolute;
+    top:0;
+    width:100px;
+    height: 200px;
+    overflow: hidden;
+}
+.qin500alert .circleProgress_wrapper .wordwarp{
+    position: absolute;
+    left: 30px;
+    right:  30px;
+    bottom:  30px;
+    top:  30px;
+    border-radius: 50%;
+    /* background-color: tomato; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    user-select: none;
+    color: #f00;
+}
+.qin500alert .circleProgress_wrapper .wrapper.left{
+    left: 0;
+}
+.qin500alert .circleProgress_wrapper .wrapper.right{
+    right: 0;
+}
+.qin500alert .circleProgress_wrapper .wrapper .circleProgress{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    border-radius: 50%;
+    width:200px;
+    border:30px solid #ddd;
+}
+.qin500alert .circleProgress_wrapper .wrapper .circleProgress.leftcircle{
+    left: 0;
+    border-bottom-color: #007bff;
+    border-left-color: #007bff;
+    transform: rotate(225deg);
+}
+.qin500alert .circleProgress_wrapper .wrapper .circleProgress.rightcircle{
+    right: 0;
+    border-top-color: #007bff;
+    border-right-color: #007bff;
+    transform: rotate(225deg);
+}

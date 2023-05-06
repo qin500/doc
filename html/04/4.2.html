@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行上下文与作用域</title>
+</head>
+<body>
+
+<script>
+
+    var color = "blue";
+
+    function changeColor() {
+        //它仅仅会修改函数内部的变量,不会修改函数外部的变量
+        let color = "cyan";
+        if (color === "blue") {
+            color = "green"
+        } else {
+            color = "blue2"
+        }
+    }
+
+    changeColor()
+    console.log(color)
+
+</script>
+
+
+</body>
+</html>

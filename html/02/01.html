@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script元素</title>
+</head>
+<body>
+
+
+<script>
+    //解析16进制数
+    let x = parseInt("0xff");
+    let y = parseInt("99", 8);
+    console.log(x, y)
+    console.log(parseFloat("3.134e2"))
+
+    //String
+    console.log("\x41")//a
+    let z = "This is the letter sigma: \u03a3."//뿺
+    console.log(z.length)//28,最后一个被转义成一个字符
+
+    //转换为字符串
+    let age = 11;
+    let ageAsString = age.toString();//字符串11
+    console.log(typeof ageAsString)
+    let found = true;
+    let foundAsString = found.toString();//字符串true
+    console.log(foundAsString)
+    let num = 888;
+    console.log(num.toString(8))//1570
+
+    //使用String转型函数,当不确定变量是否为null,undefined,都可以输出
+    let ab = null, bb
+    console.log(String(ab), String(bb))
+    console.log(String(1111))
+
+    //模板字面量
+    let myTemplateLiteral = `first line
+                           second line`
+    console.log(myTemplateLiteral)
+    let myMultipleLineString = `first line \nsecond line`
+    console.log(myMultipleLineString)
+    //这个模板字面量以一个换行符开头
+    let secondTemplateLiteral = `
+    first line
+    second line`
+    console.log(secondTemplateLiteral[0] === "\n")
+
+    // 字符串插值
+    let value = 5;
+    let exponent = "second"
+
+    let monery = "10元"
+    let name = "小明"
+    let interpolateString = `${name}出门带了${monery}钱,买花花了5元,还剩${parseInt(monery) - 5}元`
+    console.log(interpolateString)
+    console.log(`Hello, ${`World`}!`); // Hello, World!
+
+    let foo = {toString: () => 'World'}
+    console.log(`Hello,${foo}`)
+
+    function capitalize(word) {
+        return `${word[0].toUpperCase()}${word.slice(1)}`
+    }
+
+    console.log(`${capitalize('hello')},${capitalize('world')}`)
+
+    // 6. 模板字面量标签函数
+
+    let a = 5,
+        b = 7
+
+    function simpleTag(strings, aValExpression, bValExpression, sumValExpression) {
+        console.log(strings)
+        console.log(aValExpression)
+        console.log(bValExpression)
+        console.log(sumValExpression)
+        return 'foobar'
+    }
+
+    let untaggedResult = `${a} + ${b}=${a + b}`
+    let taggedResult = simpleTag`${a} + ${b} = ${a + b}`
+    console.log(untaggedResult)
+    // console.log(taggedResult)
+
+    let ba = 6,
+        bc = 9;
+
+    function simpleTag(strings, ...expression) {
+        console.log(strings)//['', ' + ', ' = ', '', raw: Array(4)]
+        console.log(expression)//[6, 9, 15]
+    }
+
+    simpleTag`${ba} + ${bc} = ${ba + bc}`
+</script>
+</body>
+</html>

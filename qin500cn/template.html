@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>邮件模板标题</title>
+    <style>
+
+    </style>
+</head>
+<body style="font-weight: bold;font-size: 1.2rem;">
+<h1>{{ip}} {{time}}</h1>
+<div style="width:600px;margin:0 auto;display: block;border: 1px solid #ddd;padding:10px;">
+    <ul style="list-style: none;padding: 0">
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">系统:</label><span>{{device_type}}</span>
+        </li>
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">宽高:</label><span>{{wh}}</span>
+        </li>
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">像素比:</label><span>{{pixelRatio}}</span>
+        </li>
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">次数:</label><span>{{count}}</span>
+        </li>
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">来自:</label><span>{{referrer}}</span>
+        </li>
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">成功:</label><span>{{succ}}</span>
+        </li>
+        <li style="list-style: none;border: 1px solid #ddd;height:45px;line-height: 45px;border-bottom: none;"><label
+                style="text-align:center;margin-right:10px;border-right:1px solid #ddd;display: inline-block;width: 90px">UA:</label><span>{{ua}}</span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

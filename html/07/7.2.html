@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器模式</title>
+</head>
+<body>
+<div>
+    <div>迭代器与生成器</div>
+</div>
+
+<script>
+
+
+    let num = 1;
+    let obj = {};
+
+    //这两种类型没有实现迭代器工厂函数
+    console.log(num[Symbol.iterator]);
+    console.log(obj[Symbol.iterator]);
+
+    let str = "abc"
+    let arr = ['a', 'b', 'c'];
+    let map = new Map().set('a', 1).set('b', 2).set('c', 3);
+    let set = new Set().add('a').add('b').add('c');
+    let els = document.querySelectorAll('div');
+
+
+    //这些类型都实现了迭代器工厂函数
+    console.log(str[Symbol.iterator]);
+    console.log(arr[Symbol.iterator]);
+    console.log(map[Symbol.iterator]);
+    console.log(set[Symbol.iterator]);
+    console.log(els[Symbol.iterator]);
+
+
+    //调用这个工厂函数会生成一个迭代器
+    console.log(str[Symbol.iterator]());
+    console.log(arr[Symbol.iterator]());
+    console.log(map[Symbol.iterator]());
+    console.log(set[Symbol.iterator]());
+    console.log(els[Symbol.iterator]());
+
+
+    let arr1 = ['foo', 'bar', 'baz'];
+    for (const el of arr1) {
+        console.log(el)
+    }
+
+    //数组结构
+    let [a, b, c] = arr;
+    console.log(a, b, c)
+    //扩展操作符
+    let arr2 = [...arr];
+    console.log(arr2)
+
+    //Array.from()
+    let arr3 = Array.from(arr);
+    console.log(arr3)
+
+    //Set构造函数
+    let set1 = new Set(arr);
+    console.log(set1);//Set(3){'a', 'b', 'c'}
+
+    //Map构造函数
+    let pairs = arr.map((x, i) => [x, i]);
+    console.log(pairs)
+
+    //如果镀锡原型链上的父类实现了Iterable接口,那么这个对象也就实现了这个接口
+    class FooArray extends Array {
+    }
+
+    let fooArr = new FooArray('foo', 'bar', 'baz');
+
+    for (let el of fooArr) {
+        console.log(el)
+    }
+
+</script>
+</body>
+</html>

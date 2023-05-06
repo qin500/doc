@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域增强</title>
+</head>
+<body>
+
+
+<script>
+
+    function buildUrl() {
+        let qs = "?debug=true";
+
+        with (location) {
+            var url = href + qs
+        }
+
+        return url;
+    }
+
+    console.log(buildUrl().toLowerCase())
+
+
+    function sum() {
+        let mm = 88;
+
+        function product() {
+            let mm = 77
+            return mm + 22
+        }
+
+        return product()
+    }
+
+    console.log(sum())
+
+</script>
+</body>
+</html>

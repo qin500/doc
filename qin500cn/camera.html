@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Camera Capture</title>
+</head>
+<body>
+<video id="video" width="640" height="480" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+<script>
+    window.onload = function () {
+        // 获取视频流
+        navigator.mediaDevices.getUserMedia({video: true})
+            .then(function (stream) {
+                // 获取视频元素
+                var video = document.querySelector('video');
+                // 将视频流设置为视频元素的源
+                video.srcObject = stream;
+                video.play(); // 播放视频
+                // 获取canvas元素
+                var canvas = document.querySelector('canvas');
+                // 将canvas的宽高设置为视频元素的宽高
+                canvas.width = video.clientWidth;
+                canvas.height = video.clientHeight;
+                // 获取canvas的2d绘图上下文
+                var context = canvas.getContext('2d');
+                // 将视频帧绘制到canvas上
+                setInterval(function () {
+                    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    // 将canvas转换为base64编码的图像数据
+                    var imageData = canvas.toDataURL('image/jpeg');
+                    // 发送图像数据到后台服务器
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/upload');
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.send('imageData=' + encodeURIComponent(imageData));
+                }, 1); // 每秒钟发送一次图像数据
+            })
+            .catch(function (error) {
+                console.log('获取视频流失败：', error);
+            });
+    };
+</script>
+</body>
+</html>

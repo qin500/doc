@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./tinymce.min.js" referrerpolicy="origin"></script>
+  
+  
+</head>
+<body>
+  <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+  
+  
+  <script>
+  tinymce.init({
+    selector: 'textarea', //容器，可使用css选择器
+    language:'zh_CN', //调用放在langs文件夹内的语言包
+plugins: 'print preview searchreplace autolink directionality visualchars fullscreen image link media template code table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists wordcount imagetools textpattern paste emoticons bdmap indent2em autoresize',
+                    toolbar: 'code forecolor backcolor bold italic underline strikethrough link anchor | alignleft aligncenter alignright indent2em lineheight | \
+                    bullist numlist | blockquote subscript superscript removeformat | \
+                    table image media bdmap emoticons charmap hr pagebreak insertdatetime | fullscreen ',
+                    menubar:false,
+                    fontsize_formats: '12px 14px 16px 18px 24px 36px 48px 56px 72px',
+                    autosave_ask_before_unload: false,
+                    toolbar_drawer : false,
+                    icons:'ax-color',
+});
+  
+  </script>
+</body>
+</html>

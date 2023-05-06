@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+    // let person = new Object();
+    // person.name = 'Nicholas';
+    // person.age = 19;
+    //
+    // let person = {
+    //     name: 'Nicholas',
+    //     age: 19
+    // }
+
+    function displayInfo(args) {
+        let output = "";
+        if (typeof args.name == "string") {
+            output += 'Name: ' + args.name + "\n"
+        }
+        if (typeof args.age == "number") {
+            output += 'Age: ' + args.age + "\n"
+        }
+        console.log(output)
+    }
+
+    displayInfo({
+        name: '小明',
+        age: 22,
+    })
+
+    displayInfo({
+        name: '小雪'
+    })
+
+
+    let person = {
+        'first name': '洋洋',
+        'last name': '李',
+        age: 22,
+        sex: 'boy',
+        5: 100
+    }
+    //可以使用中括号的方式
+    console.log(person['first name'])
+    console.log(person['5'])
+</script>
+</body>
+</html>

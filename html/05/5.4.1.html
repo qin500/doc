@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>global</title>
+    <style>
+        body {
+            background-color: dark
+        }
+    </style>
+</head>
+<body>
+<script>
+
+
+    let url = "http://localhost:63342/5.html?id=q q@qq.com"
+    console.log(encodeURI(url))
+    console.log(encodeURIComponent(url))
+
+    let encodeURL = "http%3A%2F%2Flocalhost%3A63342%2F5.html%3Fid%3Dq%20q%40qq.com"
+    console.log(decodeURIComponent(encodeURL))
+    console.log(decodeURI(encodeURL))
+    eval("console.log('我是通过eval执行的')")
+
+
+    let msg = "hello world"
+    eval("console.log(msg)")
+
+    //定义应该函数
+    eval("function sayHi(){console.log('你好,世界')}")
+    sayHi()
+
+    eval("let msg1='hello world!'");
+    // console.log(msg1)//报错
+
+    let global = function () {
+        return this;
+    }
+    console.log(global())
+
+    // 生成介于 0 和 10（包含）之间的随机整数
+    const randomArray = new Uint32Array(1);
+    window.crypto.getRandomValues(randomArray);
+    const randomInt = randomArray[0] % 11;
+    console.log(randomInt); // 打印生成的随机整数
+
+</script>
+</body>
+</html>
